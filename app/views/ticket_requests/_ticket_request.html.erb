@@ -1,0 +1,7 @@
+<tr>
+  <td><%= ticket_request.destination %></td>
+  <td><%= ticket_request.flight_number %></td>
+  <td><%= ticket_request.departure_date.strftime("%Y-%m-%d") %></td>
+  <td><%= ticket_request.applicant_name %></td>
+  <td><%= button_to 'X', ticket_request_path(ticket_request), method: :delete %></td>
+</tr>

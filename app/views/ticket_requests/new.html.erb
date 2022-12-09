@@ -1,0 +1,41 @@
+<%= form_with(model: @ticket_request, url: ticket_requests_path) do |f| %>
+  <%= f.label :destination, 'Пункт назначения' %>
+  <%= f.text_field :destination %>
+  <ul>
+    <% @ticket_request.errors.messages_for(:destination).each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+
+  <%= f.label :departure_date, 'Время вылета' %>
+  <%# <% if @ticket_request.departure_date.present? %>
+    <%= f.date_field :departure_date, value: @ticket_request.departure_date %>
+  <%# <% else %>
+    <%# <%= f.date_field :departure_date, value: Time.now %> 
+  <%# <% end %>
+  <ul>
+    <% @ticket_request.errors.messages_for(:departure_date).each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+
+  <%= f.label :flight_number, 'Номер рейса' %>
+  <%= f.text_field :flight_number %>
+  <ul>
+    <% @ticket_request.errors.messages_for(:flight_number).each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+
+  <%= f.label :applicant_name, 'Имя и инициалы' %>
+  <%= f.text_field :applicant_name %>
+  <ul>
+    <% @ticket_request.errors.messages_for(:applicant_name).each do |m| %>
+      <li><%= m %></li>
+    <% end %>
+  </ul>
+
+  <%= f.submit 'Добавить' %>
+<% end %>
+
+<%= link_to 'На главную', root_path %>

@@ -1,0 +1,23 @@
+<%= render 'search_form' %>
+
+<table>
+  <tr>
+    <th>Пункт назначения</th>
+    <th>Номер рейса</th> 
+    <th>Время вылета</th>
+    <th>Имя и инициалы</th>
+    <th>Действия</th>
+  </tr>
+
+  <% if @ticket_requests %>
+    <% @ticket_requests.each do |r| %>
+        <%= render 'ticket_request', ticket_request: r %>
+    <% end %>
+  <% else %>
+    <tr>
+      <td colspan="4">Нет заявок</td>
+    </tr>
+  <% end %>
+</table>
+
+<%= link_to 'На главную', root_path %>
