@@ -36,5 +36,3 @@ http://localhost:3000/
 ```bash
 bundle exec rails s
 ```
-
-http://localhost:3000/
