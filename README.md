@@ -1,24 +1,40 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Скачай руби
 
-Things you may want to cover:
+```bash
+sudo apt install gnupg git curl -y
+```
 
-* Ruby version
+```bash
+curl -sSL https://rvm.io/mpapis.asc | gpg --import -
+curl -sSL https://rvm.io/pkuczynski.asc | gpg --import -
 
-* System dependencies
+curl -sSL https://get.rvm.io | bash -s stable
+```
 
-* Configuration
+Перезапусти терминал
 
-* Database creation
+```bash
+rvm install 3.1.2
+```
 
-* Database initialization
+в папке с проектом
 
-* How to run the test suite
+```bash
+bundle install
+bundle exec rails db:create
+bundle exec rails db:migrate
+bundle exec rails s
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+http://localhost:3000/
 
-* Deployment instructions
 
-* ...
+Далее для запуска сервера просто
+
+```bash
+bundle exec rails s
+```
+
+http://localhost:3000/
