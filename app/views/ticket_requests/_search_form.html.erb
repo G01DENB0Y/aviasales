@@ -1,0 +1,12 @@
+<%= form_with(url: ticket_requests_path, method: :get) do |f| %>
+  <%= f.label :departure_date, 'Время вылета' %>
+  <%= f.date_field :departure_date %>
+
+  <%= f.label :flight_number, 'Номер рейса' %>
+  <%= f.text_field :flight_number %>
+
+  <%= f.label 'Сортировать по:' %>
+  <%= f.select :sort_by, [['Нет сортировки', ''], ['Времени вылета', 'departure_date'], ['Пунктам назначения', 'destination']] %>
+
+  <%= f.submit 'Поиск' %>
+<% end %>
