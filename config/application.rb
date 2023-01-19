@@ -1,3 +1,5 @@
+#Новые изменения в проекте
+#
 require_relative "boot"
 
 require "rails"
